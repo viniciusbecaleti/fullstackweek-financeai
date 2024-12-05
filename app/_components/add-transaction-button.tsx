@@ -176,7 +176,7 @@ export default function AddTransactionButton() {
         }
       }}
     >
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button className="rounded-full font-bold">
           Adicionar transação
           <PlusCircleIcon />

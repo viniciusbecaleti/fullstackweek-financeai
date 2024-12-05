@@ -24,17 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <html lang="en">
-        <body className={`${mulishSans.variable} dark antialiased`}>
-          <ClerkProvider
-            appearance={{
-              baseTheme: dark,
-            }}
-          >
-            {children}
-          </ClerkProvider>
-        </body>
-      </html>
+      <body className={`${mulishSans.variable} dark antialiased`}>
+        <ClerkProvider
+          appearance={{
+            baseTheme: dark,
+          }}
+        >
+          {children}
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
