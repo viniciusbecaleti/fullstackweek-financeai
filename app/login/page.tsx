@@ -1,8 +1,17 @@
 import Image from "next/image";
 import { Button } from "../_components/ui/button";
 import { LogInIcon } from "lucide-react";
+import { SignInButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const { userId } = await auth();
+
+  if (userId) {
+    redirect("/");
+  }
+
   return (
     <div className="grid h-full grid-cols-1 lg:grid-cols-2">
       <div className="px-4 lg:px-28 lg:py-12">
@@ -14,10 +23,12 @@ export default function LoginPage() {
             para monitorar suas movimentações, e oferecer insights
             personalizados, facilitando o controle do seu orçamento.
           </p>
-          <Button variant="outline" className="mt-8 w-full">
-            <LogInIcon className="mr-2" />
-            Entrar ou cadastrar-se
-          </Button>
+          <SignInButton>
+            <Button variant="outline" className="mt-8 w-full">
+              <LogInIcon className="mr-2" />
+              Entrar ou cadastrar-se
+            </Button>
+          </SignInButton>
         </div>
       </div>
       <div className="relative h-full w-full">
