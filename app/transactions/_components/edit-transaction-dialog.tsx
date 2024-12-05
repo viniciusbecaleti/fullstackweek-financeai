@@ -8,11 +8,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
-import { Button } from "./ui/button";
+} from "@/app/_components/ui/dialog";
+import { Button } from "@/app/_components/ui/button";
 import { useState } from "react";
-import UpsertTransactionDialog from "./upsert-transaction-dialog";
 import { Transaction } from "@prisma/client";
+import UpsertTransactionDialog from "@/app/_components/upsert-transaction-dialog";
 
 interface EditTransactionDialogProps {
   transaction: Transaction;

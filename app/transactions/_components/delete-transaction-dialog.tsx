@@ -10,11 +10,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
-import { Button } from "./ui/button";
+} from "../../_components/ui/dialog";
+import { Button } from "../../_components/ui/button";
 import { useState } from "react";
 import { Transaction } from "@prisma/client";
-import { deleteTransactionAction } from "../_actions/delete-transaction-action";
+import { deleteTransactionAction } from "../../_actions/delete-transaction-action";
 
 interface EditTransactionDialogProps {
   transaction: Transaction;

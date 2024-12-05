@@ -1,11 +1,11 @@
 "use client";
 
-import DeleteTransactionDialog from "@/app/_components/delete-transaction-dialog";
-import EditTransactionDialog from "@/app/_components/edit-transaction-dialog";
+import DeleteTransactionDialog from "@/app/transactions/_components/delete-transaction-dialog";
 import { Badge } from "@/app/_components/ui/badge";
 import type { Transaction } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import { CircleIcon } from "lucide-react";
+import EditTransactionDialog from "../_components/edit-transaction-dialog";
 
 const CATEGORY_MAP = {
   EDUCATION: "Educação",
