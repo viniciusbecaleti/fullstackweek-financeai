@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 
 import { DataTable } from "../_components/ui/data-table";
 import { transactionColumns } from "./_columns";
-import AddTransactionButton from "../_components/add-transaction-button";
+import AddTransactionDialog from "../_components/add-transaction-dialog";
 
 export default async function TransactionsPage() {
   const { userId } = await auth();
@@ -23,7 +23,7 @@ export default async function TransactionsPage() {
     <div className="space-y-6 p-6">
       <div className="flex w-full items-center justify-between">
         <h1 className="text-2xl font-bold">Transações</h1>
-        <AddTransactionButton />
+        <AddTransactionDialog />
       </div>
       <div>
         <DataTable columns={transactionColumns} data={transactions} />

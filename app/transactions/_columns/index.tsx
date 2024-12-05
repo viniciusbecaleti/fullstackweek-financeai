@@ -1,10 +1,11 @@
 "use client";
 
+import DeleteTransactionDialog from "@/app/_components/delete-transaction-dialog";
+import EditTransactionDialog from "@/app/_components/edit-transaction-dialog";
 import { Badge } from "@/app/_components/ui/badge";
-import { Button } from "@/app/_components/ui/button";
 import type { Transaction } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
-import { CircleIcon, PencilIcon, TrashIcon } from "lucide-react";
+import { CircleIcon } from "lucide-react";
 
 const CATEGORY_MAP = {
   EDUCATION: "Educação",
@@ -99,14 +100,10 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "actions",
     header: "",
-    cell: () => (
+    cell: ({ row: { original: transaction } }) => (
       <div className="space-x-1">
-        <Button variant="ghost" size="icon" className="text-muted-foreground">
-          <PencilIcon />
-        </Button>
-        <Button variant="ghost" size="icon" className="text-muted-foreground">
-          <TrashIcon />
-        </Button>
+        <EditTransactionDialog transaction={transaction} />
+        <DeleteTransactionDialog transaction={transaction} />
       </div>
     ),
   },
